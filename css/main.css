@@ -1,0 +1,47 @@
+html{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	width: 100%;
+}
+
+/* BODY */
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+/* HEADER - FOOTER */
+header, footer {
+	height: 5%;
+	width: 100%;
+	padding: 0.01% 0;
+	text-align: center;
+	background-image: url(.././images/bg-2.png);
+	background-repeat: repeat;
+}
+
+/* NAVIGATION */
+nav {
+	background-color: #FFFFFF;
+	height: 5%;
+}
+
+/* MAIN */
+main {
+	display: flex;
+	justify-content: space-between;
+	height: 85vh;
+	width: 100%;
+}
+
+/* FOOTER */
+footer {
+	height: 5%;
+	width: 100%;
+}
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Сайт-визитка</title>
+	</head>
+	
+	<body>
+	<header>
+		<h1>Наталия Гайдар</h1>
+	</header>
+			<nav>
+				<ul id="navbar">
+					<li> <a href="index.html"> Главная </a> </li>
+					<li> <a href="about.html"> Обо мне </a> </li>
+					<li> <a href="hobby.html"> Хобби </a> </li>
+					<li> <a href="gallery.html"> Галерея </a> </li>
+					<!-- <li> <a href="map.html"> Карта </a> </li> -->
+					<!-- <li> <a href="lr_4.html">Рисунок</a></li> -->
+				</ul>
+			</nav>
+	<main>
+		<div id="left_bar"></div>
+		<div class="gallery">
+				<form name="borderForm">
+				<p> Толщина рамки:
+					<input type="text" name="border" value="5">
+					<input type="button" value="Применить" onclick="change()">
+				</p>
+				</form>
+				
+				<p>
+					Размер изображения: 
+					<input  type="range" id="size" min="1" max="5"  value="5" oninput="sizer()">
+				</p>
+				<img id="image" src="images/1.jpg" onclick="imgsrc()">
+		</div>
+		<div id="right_bar"></div>
+	</main>
+	
+	<script language="javascript">
+			var img=document.getElementById("image");
+			var imgs=new Array('images/1.jpg','images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg', 'images/7.jpg', 'images/8.jpg', 'images/9.jpg');
+			
+			//РАНДОМНАЯ СМЕНА ИЗОБРАЖЕНИЙ ПО КЛИКУ
+			function imgsrc() {
+				img.src=imgs[Math.floor(Math.random()*imgs.length)];
+			} 
+					
+			//ИЗМЕНЕНИЕ РАЗМЕРА ИЗОБРАЖЕНИЯ
+			function sizer() {
+				size=document.getElementById("size").value;
+				img=document.getElementById("image");
+				img.width=100*size+75;			
+			}
+		
+			//ИЗМЕНЕНИЕ ТОЛЩИНЫ ГРАНИЦ ИЗОБРАЖЕНИЯ
+			var changeForm=document.forms["borderForm"];
+			var border=changeForm.elements["border"];
+			function change(){
+				img=document.getElementById("image");
+				img.border=border.value;
+				img.style.borderColor="#BC986A";
+			}
+    </script>
+	
+	<footer>
+		<p>© 2020</p>
+	</footer>
+</body>
+</html>
