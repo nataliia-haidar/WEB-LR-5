@@ -23,10 +23,14 @@
 	<main>
 		<div id="left_bar"></div>
 		<div class="gallery">
-				<form name="borderForm">
+				<form name="Form">
 				<p> Толщина рамки:
 					<input type="text" name="border" value="5">
 					<input type="button" value="Применить" onclick="change()">
+				</p>
+				<p> Альтернативный текст:
+					<input type="text" name="alttext" value="img">
+					<input type="button" value="Применить" onclick="changeAlt()">
 				</p>
 				</form>
 				
@@ -34,7 +38,9 @@
 					Размер изображения: 
 					<input  type="range" id="size" min="1" max="5"  value="5" oninput="sizer()">
 				</p>
-				<img id="image" src="images/1.jpg" onclick="imgsrc()">
+				<div>
+					<img id="image" src="images/1.jpg" alt="image" onclick="imgsrc()">
+				</div>
 		</div>
 		<div id="right_bar"></div>
 	</main>
@@ -56,12 +62,20 @@
 			}
 		
 			//ИЗМЕНЕНИЕ ТОЛЩИНЫ ГРАНИЦ ИЗОБРАЖЕНИЯ
-			var changeForm=document.forms["borderForm"];
+			var changeForm=document.forms["Form"];
 			var border=changeForm.elements["border"];
 			function change(){
 				img=document.getElementById("image");
 				img.border=border.value;
 				img.style.borderColor="#BC986A";
+			}
+			
+			//ИЗМЕНЕНИЕ ALT
+			var changeAlttext=document.forms["Form"];
+			var alttext=changeAlttext.elements["alttext"];
+			function changeAlt(){
+				img=document.getElementById("image");
+				img.alt=alttext.value;
 			}
     </script>
 	
